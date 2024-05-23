@@ -13,6 +13,7 @@ namespace BoatAttack
 
         public AudioSource engineSound; // Engine sound clip
         public AudioSource waterSound; // Water sound clip
+        public ParticleSystem burst;
 
         //engine stats
         public float steeringTorque = 5f;
@@ -38,6 +39,8 @@ namespace BoatAttack
 
             _guid = GetInstanceID(); // Get the engines GUID for the buoyancy system
             _point = new NativeArray<float3>(1, Allocator.Persistent);
+
+            burst = GameObject.Find("EngineBurst").GetComponent<ParticleSystem>();
         }
 
         private void FixedUpdate()
@@ -63,7 +66,7 @@ namespace BoatAttack
         /// <param name="modifier">Acceleration modifier, adds force in the 0-1 range</param>
         public void Accelerate(float modifier)
         {
-            if (_yHeight > -0.1f) // if the engine is deeper than 0.1
+            if (modifier > 0 && _yHeight > -0.1f) // if the engine is deeper than 0.1
             {
                 modifier = Mathf.Clamp(modifier, 0f, 1f); // clamp for reasonable values
                 var forward = RB.transform.forward;
@@ -71,7 +74,13 @@ namespace BoatAttack
                 forward.Normalize();
                 RB.AddForce(horsePower * modifier * forward, ForceMode.Acceleration); // add force forward based on input and horsepower
                 RB.AddRelativeTorque(-Vector3.right * modifier, ForceMode.Acceleration);
+                if (!burst.isPlaying) burst.Play();
+            } else
+            {
+                if (burst.isPlaying) burst.Stop();
             }
+
+            
         }
 
         /// <summary>

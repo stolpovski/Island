@@ -209,8 +209,8 @@ namespace BoatAttack
                 resetPoint.y = _spawnPosition.GetColumn(3).y;
                 engine.RB.velocity = Vector3.zero;
                 engine.RB.angularVelocity = Vector3.zero;
-                engine.RB.position = resetPoint;
-                engine.RB.rotation = resetMatrix.rotation;
+                engine.RB.position = Vector3.zero;
+                engine.RB.rotation = Quaternion.identity;
             }
         }
 

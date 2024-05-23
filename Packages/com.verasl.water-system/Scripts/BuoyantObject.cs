@@ -104,6 +104,7 @@ namespace WaterSystem
             _guid = gameObject.GetInstanceID();
             Init();
             LocalToWorldConversion();
+            
         }
 
         private void SetupColliders()
