@@ -8,8 +8,10 @@ public class Character : MonoBehaviour
     CharacterController controller;
 
     public float gravity = 9.81f;
+    public float jumpSpeed = 7f;
     public Transform cam;
     public float speed;
+    bool jumped;
 
     float upSpeed;
 
@@ -24,7 +26,23 @@ public class Character : MonoBehaviour
     {
         
 
-        upSpeed -= 20 * Time.deltaTime;
+        if (controller.isGrounded)
+        {
+            
+            upSpeed = 0;
+            if (jumped)
+            {
+                upSpeed = jumpSpeed;
+                jumped = false;
+            }
+        }
+        else
+        {
+            upSpeed -= 20 * Time.deltaTime;
+        }
+
+
+        //Debug.Log(upSpeed);
 
         controller.Move((transform.up * upSpeed + transform.forward * movement.y * speed + transform.right * movement.x * speed) * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0, cam.localEulerAngles.y, 0);
@@ -37,9 +55,12 @@ public class Character : MonoBehaviour
 
     void OnJump()
     {
-        if (controller.isGrounded)
+        if (!jumped)
         {
-            upSpeed = gravity;
+            jumped = true;
+
         }
     }
+
+
 }

@@ -109,7 +109,6 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - WebGL
     - PS4
     - XboxOne
   - serializedVersion: 3
@@ -164,7 +163,6 @@ QualitySettings:
     excludedTargetPlatforms:
     - iPhone
     - Android
-    - WebGL
     - Nintendo Switch
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:

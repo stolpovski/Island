@@ -24,20 +24,20 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Reset",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "218640d2-e6dc-4136-842e-4621c0883e15",
+                    "id": "097a2ec8-8df3-4d48-96e5-fbf096270878",
                     "expectedControlType": "",
                     "processors": "AxisDeadzone(min=0.1,max=1)",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "Reset",
                     "type": "Button",
-                    "id": "097a2ec8-8df3-4d48-96e5-fbf096270878",
-                    "expectedControlType": "",
-                    "processors": "AxisDeadzone(min=0.1,max=1)",
+                    "id": "fcff4b70-9c5d-4dc2-b9c5-cc78a7ade97d",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -265,45 +265,23 @@
                 },
                 {
                     "name": "",
-                    "id": "b449cb97-f7cf-448b-9aa9-900c8085c53d",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f8b1e58a-fd18-487f-ae58-dc92e5273625",
-                    "path": "<Touchscreen>/primaryTouch/tapCount",
-                    "interactions": "MultiTap(tapCount=3)",
-                    "processors": "",
-                    "groups": "TouchScreen",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cccb7f76-f69f-4b9f-9180-546a2099aedc",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6c9efbd8-b12e-4a6d-9787-042b4abda799",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b340ff39-0ff9-47ec-9c6e-447a2bc61efb",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

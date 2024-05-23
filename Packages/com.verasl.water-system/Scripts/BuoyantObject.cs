@@ -20,6 +20,7 @@ namespace WaterSystem
 {
     public class BuoyantObject : MonoBehaviour
     {
+        Vector3 spawnPos;
         public BuoyancyType _buoyancyType; // type of buoyancy to calculate
         public float density; // density of the object, this is calculated off it's volume and mass
         public float volume; // volume of the object, this is calculated via it's colliders
@@ -101,9 +102,11 @@ namespace WaterSystem
 
         private void OnEnable()
         {
+            spawnPos = transform.position;
             _guid = gameObject.GetInstanceID();
             Init();
             LocalToWorldConversion();
+            _rb.position = spawnPos;
             
         }
 

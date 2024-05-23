@@ -47,6 +47,11 @@ namespace BoatAttack
             controller.ResetPosition();
         }
 
+        public void Restart()
+        {
+            controller.ResetPosition();
+        }
+
         private void FreezeBoat(InputAction.CallbackContext context)
         {
             _paused = !_paused;

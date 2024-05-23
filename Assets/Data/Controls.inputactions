@@ -2,6 +2,96 @@
     "name": "Controls",
     "maps": [
         {
+            "name": "Game",
+            "id": "ced471eb-17cd-4ec7-99a6-92bb004ac1b4",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "f854da4d-bd59-45da-a23d-804a2e4ec1bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "16c2c9ef-7342-44af-a882-5c6589c823bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Board",
+                    "type": "Button",
+                    "id": "aa93b1f6-9b97-4594-9a6a-1aceb77edd7b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "40f31ffe-72c0-4d43-a9c2-888c73447c28",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db553ce8-4967-424e-9575-4a8825aa0f70",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c490b221-37a0-418b-b1bd-7b833779c193",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ba22e4f-1a8d-402e-a110-a4c152465579",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Board",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe146987-7829-4be9-a2f6-46dbaf8e4583",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Board",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Boat",
             "id": "1165d0c3-cf16-4ddb-b6f1-2e9818fac467",
             "actions": [
@@ -26,52 +116,15 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Game",
-            "id": "ced471eb-17cd-4ec7-99a6-92bb004ac1b4",
-            "actions": [
-                {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "f854da4d-bd59-45da-a23d-804a2e4ec1bf",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Quit",
-                    "type": "Button",
-                    "id": "16c2c9ef-7342-44af-a882-5c6589c823bc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "40f31ffe-72c0-4d43-a9c2-888c73447c28",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Restart",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c490b221-37a0-418b-b1bd-7b833779c193",
-                    "path": "<Keyboard>/escape",
+                    "id": "8e2089d2-a5be-48d0-ba6b-a9064de16fda",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "InvertVector2,ScaleVector2(x=0.02,y=0.02)",
                     "groups": "",
-                    "action": "Quit",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

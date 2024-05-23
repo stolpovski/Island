@@ -14,6 +14,7 @@ namespace BoatAttack
     /// </summary>
     public class Boat : MonoBehaviour
     {
+        Vector3 spawnPos;
         // Boat stats
         public Renderer boatRenderer; // The renderer for the boat mesh
         public Renderer engineRenderer; // The renderer for the boat mesh
@@ -52,6 +53,7 @@ namespace BoatAttack
             }
             _spawnPosition = transform.localToWorldMatrix;
             TryGetComponent(out engine.RB);
+            spawnPos = transform.position;
         }
 
         public void Setup(int player = 1, bool isHuman = true, BoatLivery livery = new BoatLivery())
@@ -209,7 +211,7 @@ namespace BoatAttack
                 resetPoint.y = _spawnPosition.GetColumn(3).y;
                 engine.RB.velocity = Vector3.zero;
                 engine.RB.angularVelocity = Vector3.zero;
-                engine.RB.position = Vector3.zero;
+                engine.RB.position = spawnPos;
                 engine.RB.rotation = Quaternion.identity;
             }
         }
