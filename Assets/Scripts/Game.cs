@@ -50,6 +50,7 @@ public class Game : MonoBehaviour
 
                 player.transform.SetParent(boat.transform);
                 player.transform.localPosition = new Vector3(0, 1, 0);
+                player.transform.localRotation = Quaternion.identity;
                 boarded = true;
             }
             else
@@ -75,6 +76,7 @@ public class Game : MonoBehaviour
                 paraglider.cam.SetActive(true);
 
                 player.transform.SetParent(paraglider.transform);
+                player.transform.localRotation = Quaternion.identity;
                 //player.transform.localPosition = new Vector3(0, 1, 0);
                 paraglider.boarded = true;
             }
