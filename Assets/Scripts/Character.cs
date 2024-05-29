@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
+    GameObject item;
+    bool hasKey;
     CharacterController controller;
 
     public float gravity = 9.81f;
@@ -61,6 +63,55 @@ public class Character : MonoBehaviour
 
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Key")
+        {
+            item = other.gameObject;
+        }
+
+        if (other.name == "Chest")
+        {
+            item = other.gameObject;
+        }
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Key")
+        {
+            item = null;
+
+        }
+
+        if (other.name == "Chest")
+        {
+            item = null;
+
+        }
+    }
+
+
+
+    void OnUse()
+    {
+        if (item && item.name == "Key")
+        {
+            item.SetActive(false);
+            GameObject.Find("KeyLabel").SetActive(false);
+            hasKey = true;
+        }
+
+        if (item && item.name == "Chest" && hasKey)
+        {
+            item.GetComponent<Animator>().enabled = true;
+        }
+    }
+
+
+ 
 
 
 }
